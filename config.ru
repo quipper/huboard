@@ -14,8 +14,10 @@ require './lib/api'
 require './lib/github'
 require './lib/pebble'
 
-configure :production do 
+configure :production do
   require "newrelic_rpm"
+  require 'rack/ssl'
+  use Rack::SSL
 end
 
 
